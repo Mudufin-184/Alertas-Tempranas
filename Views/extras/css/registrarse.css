@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* PALETA DE COLORES */
+:root {
+  --primary-color: #39A900;
+  --secondary-color: #00324D;
+  --complementary-color1: #385c57;
+  --complementary-color2: #e6e6e6;
+  --degrade: linear-gradient(#39a900, #A1D687, #fff);
+  --font-size-titulos-h1: 48px;
+  --font-size-titulos-h2: 40px;
+  --font-size-titulos-h3: 32px;
+  --font-size-titulos-h4: 24px;
+  --font-size-parrafos: 24px;
+  --tipografia-titulos: "Work Sans", sans-serif;
+  --tipografia-parrafos: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#login {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/Bg-estudiante2.jpeg);
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
+  opacity: 0.7;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+}
+
+
+#login .cont-general {
+  margin: 0 5%;
+}
+
+#login .cont-info-sena {
+  font-family: var(--tipografia-titulos);
+  width: 100%;
+  text-align: center;
+}
+
+#login .cont-info-sena img {
+  width: 80px;
+}
+
+#login .cont-info-sena h2 {
+  font-size: 28px;
+  padding: 0 20px;
+}
+
+/* 
+#login .cont-inicio-sesion{
+    position: absolute;
+    right: 140px;
+    top: 360px;
+} */
+/* estilos de lo campos de login */
+.cont-inicio-sesion {
+  max-width: 500px;
+  max-height: 612px;
+  background: #f8f9fd;
+  background: linear-gradient(0deg,
+      rgb(255, 255, 255) 0%,
+      rgb(244, 247, 251) 100%);
+  border-radius: 10px;
+  padding: 20px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: var(--complementary-color1) 0px 30px 30px -20px;
+  /* margin: 20px; */
+}
+
+.heading h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-top: 8px;
+  font-family: var(--tipografia-titulos);
+}
+
+.form {
+  margin-top: 16px;
+}
+
+.form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  margin-top: 6px;
+  border: 1px solid #dfdfdf;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+.vinculos{
+  margin-top: 12px;
+  margin-left: 6px;
+  margin-bottom: 4px;
+}
+.vinculos2{
+  margin-left: 140px;
+}
+.form a {
+  color: #6abf43;
+}
+
+.form .login-button {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: #fff;
+  padding-block: 15px;
+  margin: 12px auto;
+  border-radius: 20px;
+  box-shadow: #999 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: #999 0px 23px 10px -20px;
+  border-radius: 0;
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: #999 0px 15px 10px -10px;
+}
