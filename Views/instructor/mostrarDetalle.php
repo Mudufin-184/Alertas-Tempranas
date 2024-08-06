@@ -131,24 +131,20 @@ require_once("../../Models/consultasInstructor.php");
 
     <section class="section">
 
-
       <!-- TABLA CONSULTAR -->
       <div class="row">
         <div class="col-lg-12">
 
           <div class="card ">
-            <div class="card-body ">
-              <h5 class="card-title">Consultar Detalle del Caso</h5>
-
-                <?php
-                  cargarDetalles();  
-                ?>
-
-              <!-- End Table with stripped rows -->
-
+            <div class="card-detalle" style="padding: 29px 14px";>
+              <h3 class="titulo">Detalle del Caso</h3>
+              <div class="row">
+                  <?php
+                    cargarDetalles();  
+                  ?>            
+              </div>
             </div>
-          </div>
-
+         </div>
         </div>
       </div>
     </section>
@@ -158,14 +154,14 @@ require_once("../../Models/consultasInstructor.php");
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Alertas_Tempranas</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">Alertas_Tempranas</a>
     </div>
   </footer><!-- End Footer -->
 

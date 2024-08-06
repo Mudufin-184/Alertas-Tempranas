@@ -34,25 +34,32 @@ function cargarCasos(){
 
 
 function cargarDetalles() {
-    $id_caso = $_GET['id'];
+  $id_caso = $_GET['id'];
 
-    $objConsultas = new ConsultasInstructor();
-    $result = $objConsultas->consultarCasosDet($id_caso);
-    // echo'<script>alert("'.$result.'")</script>';
-        foreach ($result as $f) {
-            echo '
-            <label class="modal-detalles" for="">Ficha:</label>'.$f['ficha'].' <br>
-            <label class="modal-detalles" for="">Nombre:</label>'.$f['nombre'].' '.$f['apellido'].' <br>
-            <label class="modal-detalles" for="">Telefono:</label>'.$f['telefono'].' <br>
-            <label class="modal-detalles" for="">Email:</label>'.$f['email'].' <br>
-            <label class="modal-detalles" for="">Programa:</label>'.$f['programa'].'<br>
-            <label class="modal-detalles" for="">Categoria:</label>'.$f['categoria'].' <br>
-            <label class="modal-detalles" for="">Nombre del encargado:</label>'.$f['nombre_encargado'].' <br>
-            <label class="modal-detalles" for="">Fecha:</label>'.$f['fecha'].'<br>
-            <label class="modal-detalles" for="">Motivo:</label>'.$f['descripcion'].'<br>
-            ';
-        }
+  $objConsultas = new ConsultasInstructor();
+  $result = $objConsultas->consultarCasosDet($id_caso);
+  // echo'<script>alert("'.$result.'")</script>';
+  foreach ($result as $f) {
+      echo '
+      <div class="col-md-4">
+          <label class="modal-detalles" for="">Ficha:</label>'.$f['ficha'].' <br>
+          <label class="modal-detalles" for="">Nombre:</label>'.$f['nombre'].' '.$f['apellido'].' <br>
+          <label class="modal-detalles" for="">Telefono:</label>'.$f['telefono'].' <br>
+      </div>
+      <div class="col-md-4">
+          <label class="modal-detalles" for="">Email:</label>'.$f['email'].' <br>
+          <label class="modal-detalles" for="">Programa:</label>'.$f['programa'].'<br>
+          <label class="modal-detalles" for="">Categoria:</label>'.$f['categoria'].' <br>
+      </div>
+      <div class="col-md-4">
+          <label class="modal-detalles" for="">Nombre del encargado:</label>'.$f['nombre_encargado'].' <br>
+          <label class="modal-detalles" for="">Fecha:</label>'.$f['fecha'].'<br>
+          <label class="modal-detalles" for="">Motivo:</label>'.$f['descripcion'].'<br>
+      </div>
+      ';
+  }
 }
+
 
 function cargarPerfilInstructor()
 {
