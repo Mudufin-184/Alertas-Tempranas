@@ -68,8 +68,9 @@ body {
 } */
 /* estilos de lo campos de login */
 .cont-inicio-sesion {
+  overflow-y: auto;
   max-width: 500px;
-  max-height: 612px;
+  max-height: 580px;
   background: #f8f9fd;
   background: linear-gradient(0deg,
       rgb(255, 255, 255) 0%,

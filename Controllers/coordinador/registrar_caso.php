@@ -1,9 +1,11 @@
 <?php
 
 require_once('../../Models/ConexionDB.php');
-require_once('../../Models/consultasCoordinador.php');
+require_once('../../Models/consultasBienestar.php');
 require_once('../../Models/validarSesion.php');
+
 // Campos del aprendiz
+$tipo_documento_Aprendiz = $_POST["tipo_documento"]; // Nuevo campo
 $identificacion = $_POST["identificacion"];
 $nombre = $_POST["nombre"];
 $apellido = $_POST["apellido"];
@@ -13,7 +15,6 @@ $programa = $_POST["programa"];
 $ficha = $_POST["ficha"];
 
 // Campos del caso
-
 $categoria = $_POST["categoria"];
 $id_encargado = $_POST["id_encargado"];
 $motivo = $_POST["motivo"];
@@ -23,16 +24,13 @@ $fecha = date('Y-m-d');
 $estado = "En espera";
 
 // ARCHIVO SOPORTE
-
 $rutaArchivo = "../../Uploads/Casos/".$_FILES['soporte']['name'];
-
 $resultado = move_uploaded_file($_FILES['soporte']['tmp_name'], $rutaArchivo);
 
 session_start();
 $id_usuario = $_SESSION['id'];
 
+$objConsultas = new ConsultasBienestar();
+$result = $objConsultas->registrarRuta($tipo_documento_Aprendiz, $identificacion, $nombre, $apellido, $telefono, $email, $programa, $ficha, $id_usuario, $categoria, $fecha, $id_encargado, $motivo, $estado, $rutaArchivo);
 
-$objConsultas = new ConsultasCoordinador();
-$result = $objConsultas->registrarRuta($identificacion, $nombre, $apellido, $telefono, $email, $programa, $ficha, $id_usuario, $categoria, $fecha, $id_encargado, $motivo, $estado, $rutaArchivo);
-
-
+?>
