@@ -1,18 +1,16 @@
 
 <?php
 class ConsultasCoordinador {
-    public function registrarRuta($tipo_documento, $identificacion, $nombre, $apellido, $telefono, $email, $programa, $ficha, $id_usuario, $categoria, $fecha, $id_encargado, $motivo, $estado, $rutaArchivo){
+    public function registrarRuta($identificacion, $nombre, $apellido, $telefono, $email, $programa, $ficha, $id_usuario, $categoria, $fecha, $id_encargado, $motivo, $estado, $rutaArchivo){
 
         $objConexion = new Conexion();
         $conexion = $objConexion->getConexion();
 
-        // Actualizar la consulta para incluir el tipo de documento
-        $registrarAprendiz = "INSERT INTO aprendiz(documento, identificacion, nombre, apellido, email, telefono, programa, ficha, id_usuario) 
-                              VALUES (:tipo_documento, :identificacion, :nombre, :apellido, :email, :telefono, :programa, :ficha, :id_usuario)";
+
+        $registrarAprendiz = "INSERT INTO aprendiz( documento, nombre, apellido, email, telefono, programa, ficha, id_usuario) Values (:identificacion, :nombre, :apellido, :email, :telefono, :programa, :ficha, :id_usuario)";
 
         $result1 = $conexion->prepare($registrarAprendiz);
 
-        $result1->bindparam(':tipo_documento', $tipo_documento);
         $result1->bindparam(':identificacion', $identificacion);
         $result1->bindparam(':nombre', $nombre);
         $result1->bindparam(':apellido', $apellido);
@@ -26,8 +24,8 @@ class ConsultasCoordinador {
 
         $id_aprendiz = $conexion->lastInsertId();
 
-        $registrarCaso = "INSERT INTO casos(descripcion, categoria, soporte, fecha, estado, id_aprendiz, id_usuario, id_encargado) 
-                          VALUES (:motivo, :categoria, :rutaArchivo, :fecha, :estado, :id_aprendiz, :id_usuario, :id_encargado)";
+
+        $registrarCaso = "INSERT INTO casos(descripcion, categoria, soporte, fecha, estado, id_aprendiz, id_usuario, id_encargado) Values (:motivo, :categoria, :rutaArchivo, :fecha, :estado, :id_aprendiz, :id_usuario, :id_encargado)";
 
         $result2 = $conexion->prepare($registrarCaso);
 
@@ -42,8 +40,10 @@ class ConsultasCoordinador {
 
         $result2->execute();
 
-        echo "<script> alert('El caso ha sido registrado') </script>";
-        echo "<script> location.href='../../Views/coordinador/index.php' </script>";
+        echo"<script> alert('El  caso ha sido registrado;)') </script>";
+        echo"<script> location.href='../../Views/coordinador/index.php' </script>";
+
+        
     }
 
 

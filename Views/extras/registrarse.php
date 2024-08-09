@@ -20,56 +20,46 @@
       </div>
       <div class="heading"><h1>Registrarse</h1></div>
       <form class="form" action="../../Controllers/registrarUsuario.php" method="post">
-          <div class="row">
-              <div class="col-sm-12">
-                  <select id="tipoDocumentoUser" name="tipoDocumentoUser" class="input" required>
-                      <option value="" disabled selected>Seleccione el tipo de documento</option>
-                      <option value="CC">Cédula de ciudadanía</option>
-                      <option value="TI">Tarjeta de identidad</option>
-                      <option value="CE">Cédula de extranjería</option>
-                  </select>
-              </div>
-              <div class="col-sm-12">
-                  <input placeholder="Documento" id="documentoUser" name="documentoUser" type="number" class="input" required />
-              </div>
-              <div class="col-sm-12">
-                  <input placeholder="Nombre" id="nombreUser" name="nombreUser" type="text" class="input" required />
-              </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <input placeholder="Documento" id="documentolUser" name="documentolUser" type="number" class="input" required="" />
           </div>
-          <div class="row">
-              <div class="col-sm-12">
-                  <input placeholder="Correo" id="emailUser" name="emailUser" type="email" class="input" required />
-              </div>
-              <div class="col-sm-6">
-                  <input placeholder="Teléfono" id="telefonoUser" name="telefonoUser" type="number" class="input" required />
-              </div>
-              <div class="col-sm-6">
-                  <select name="rolUser" id="rolUser" class="input" required>
-                      <option value="" disabled selected>Seleccione el rol</option>
-                      <option value="instructor">Instructor</option>
-                      <option value="bienestar">Bienestar</option>
-                      <option value="coordinadorAcademico">Coordinador Académico</option>
-                      <option value="coordinadorFormacion">Coordinador Formación</option>
-                  </select>
-              </div>
+          <div class="col-sm-12">
+            <input placeholder="Nombre" id="nombreUser" name="nombreUser" type="text" class="input" required="" />
           </div>
-          <div class="row">
-              <div class="col-sm-6">
-                  <input placeholder="Contraseña" id="claveUser" name="claveUser" type="password" class="input" required />
-              </div>
-              <div class="col-sm-6">
-                  <input placeholder="Verificar Contraseña" id="clave_verificarUser" name="clave_verificarUser" type="password" class="input" required />
-              </div>
-              <div class="col-sm-12 vinculos">
-                  <span class="vinculos1"><a href="recuperarClave.php">¿Olvidó su Contraseña?</a></span>
-                  <span class="vinculos2"><a href="iniciarSesion.php">Iniciar Sesión</a></span>
-              </div>
-              <div class="col-sm-12">
-                  <button type="submit" class="login-button">REGISTRAR</button>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <input placeholder="Correo" id="emailUser" name="emailUser" type="email" class="input" required="" />
           </div>
+          <div class="col-sm-6">
+            <input placeholder="Telefono" id="telefonoUser" name="telefonoUser" type="number" class="input" required="" />
+          </div>
+          <div class="col-sm-6">
+            <select placeholder="Seleccione..." name="rolUser" id="rolUser" class="input">
+              <option value="instructor">Instructor</option>
+              <option value="bienestar">Bienestar</option>
+              <option value="coordinadorAcademico">Coordinador Academico</option>
+              <option value="coordinadorFormacion">Coordinador Formacion</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">        
+          <div class="col-sm-6">
+            <input placeholder="Contraseña" id="claveUser" name="claveUser" type="password" class="input" required="" />
+          </div>      
+          <div class="col-sm-6">
+            <input placeholder="Verificar Contraseña" id="clave_vefificarUser" name="clave_vefificarUser" type="password" class="input" required="" />
+          </div>
+          <div class="col-sm-12 vinculos">
+            <span class="vinculos1"><a href="recuperarClave.php">¿Olvidó su Contraseña?</a></span>
+            <span class="vinculos2"><a href="iniciarSesion.php">Iniciar Sesión</a></span>
+          </div>
+          <div class="col-sm-12">
+            <button type="submit" class="login-button">REGISTRAR</button>
+          </div>
+        </div>
       </form>
-
     </div>
   </div>
 </section>
