@@ -173,19 +173,10 @@ $encargados = $objConsultas->CargarEncargado();
               
                 <!-- Multi Columns Form -->
                 <div class="row g-3 formulario">
-                    <h5>Paso 1: Información Aprendiz</h5>
-                    <!-- Tipo de Documento -->
-                    <div class="col-md-6 campo">
-                      <label for="tipo_documento">Tipo de Documento:</label> <br>
-                      <select id="tipo_documento" class="input" name="tipo_documento">
-                        <option value="CC">Cédula de ciudadanía</option>
-                        <option value="TI">Tarjeta de identidad</option>
-                        <option value="CE">Cédula de extranjería</option>
-                      </select>
-                    </div>
+                  <h5>Paso 1: Información Aprendiz</h5>
                     <!-- Numero de Identificación -->
                     <div class="col-md-6 campo">
-                      <label for="identificacion">Número de Identificación:</label> <br>
+                      <label for="identificacion">Numero de Identificación:</label> <br>
                       <input type="text" placeholder="Ej: 123456" id="identificacion" class="input" name="identificacion">
                     </div>
                     <!-- Nombre del aprendiz -->
@@ -198,32 +189,38 @@ $encargados = $objConsultas->CargarEncargado();
                       <label for="aprendiz_Ape">Apellidos Del Aprendiz:</label> <br>
                       <input type="text" placeholder="Ej: Rodriguez Lopez" id="aprendiz_Ape" class="input" name="apellido">
                     </div>
-                    <!-- Email del aprendiz -->
-                    <div class="col-md-12 campo">
-                      <label for="aprendiz_Email">Email Del Aprendiz:</label> <br>
-                      <input type="email" placeholder="Ej: daniel@gmail.com" id="aprendiz_Email" class="input" name="email">
-                    </div>
-                    <!-- Teléfono del aprendiz -->
+
+                   <!-- Email del aprendiz -->
                     <div class="col-md-6 campo">
-                      <label for="aprendiz_Telefono">Teléfono Del Aprendiz:</label> <br>
-                      <input type="number" placeholder="Ej: 3214565342" id="aprendiz_Telefono" class="input" name="telefono">
+                      <label for="aprendiz_Email">Email Del Aprendiz:</label> <br>
+                      <input type="email" placeholder="Ej:daniel@gmail.com"  id="aprendiz_Email" class="input" name="email">
                     </div>
-                    <!-- Ficha del aprendiz -->
+
+
+                    <!-- Telefono del aprendiz -->
+                    <div class="col-md-6 campo">
+                      <label for="aprendiz_Telefono">Telefono Del Aprendiz:</label> <br>
+                      <input type="number" placeholder="Ej:3214565342"  id="aprendiz_Telefono" class="input" name="telefono">
+                    </div>
+
+                    <!-- ficha del aprendiz -->
                     <div class="col-md-6 campo">
                       <label for="aprendiz_Ficha">Ficha:</label> <br>
-                      <input type="text" placeholder="Ej: 2692926" id="aprendiz_Ficha" class="input" name="ficha">
+                      <input type="text" placeholder="Ej:2692926"  id="aprendiz_Ficha" class="input" name="ficha">
                     </div> 
+
                     <!-- Programa del aprendiz -->
                     <div class="col-md-12 campo">
                       <label for="aprendiz_Programa">Programa:</label> <br>
-                      <input type="text" placeholder="Ej: Análisis y desarrollo de software" id="aprendiz_Programa" class="input" name="programa">
+                      <input type="text" placeholder="Ej:Análisis y desarrollo de software"  id="aprendiz_Programa" class="input" name="programa">
                     </div>
-                    <div class="text-center">
+                    
+                   <div class="text-center">
                       <button type="button" class="form-button btn-next">Siguiente</button>
                     </div>
-                  </div>
                 </div>
-            </div>
+              </div>
+          </div>
     
         <!-- Formulario 2 -->
         <div class="card form-step">
