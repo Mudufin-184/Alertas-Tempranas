@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-06-2024 a las 00:07:36
+-- Tiempo de generación: 08-08-2024 a las 21:08:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `aprendiz` (
   `id` int(11) NOT NULL,
+  `tipo_documento_aprendiz` varchar(20) NOT NULL,
   `documento` bigint(20) NOT NULL,
   `nombre` varchar(60) NOT NULL,
   `apellido` varchar(50) NOT NULL,
@@ -43,34 +44,37 @@ CREATE TABLE `aprendiz` (
 -- Volcado de datos para la tabla `aprendiz`
 --
 
-INSERT INTO `aprendiz` (`id`, `documento`, `nombre`, `apellido`, `email`, `telefono`, `programa`, `ficha`, `id_usuario`) VALUES
-(1, 1234567890, 'Andrea ', 'Martinez', 'andrea.martinez@sena.edu.co', 2147483647, 'Tecnología en Análisis y Desarrollo de Sistemas de', '12345', 1),
-(2, 2345678901, 'Carlos', 'Gutierrez', 'carlos.gutierrez@sena.edu.co', 2147483647, 'Tecnología en Gestión de Redes', '12346', 2),
-(3, 3456789012, 'Lucia', 'Fernandez', 'lucia.fernandez@sena.edu.co', 2147483647, 'Tecnología en Gestión Administrativa', '12347', 3),
-(4, 4567890123, 'Jorge ', 'Ramirez', 'jorge.ramirez@sena.edu.co', 2147483647, 'Tecnología en Diseño de Productos Industriales', '12348', 1),
-(5, 5678901234, 'Natalia ', 'Torres', 'natalia.torres@sena.edu.co', 2147483647, 'Tecnología en Producción Agrícola', '12349', 2),
-(6, 6789012345, 'David ', 'Herrera', 'david.herrera@sena.edu.co', 2147483647, 'Tecnología en Gestión Empresarial', '12350', 3),
-(7, 7890123456, 'Elena ', 'Lopez', 'elena.lopez@sena.edu.co', 2147483647, 'Tecnología en Construcción', '12351', 1),
-(8, 8901234567, 'Miguel ', 'Sanchez', 'miguel.sanchez@sena.edu.co', 2147483647, 'Tecnología en Desarrollo de Software', '12352', 2),
-(9, 9012345678, 'Laura', 'Castillo', 'laura.castillo@sena.edu.co', 2147483647, 'Tecnología en Seguridad y Salud en el Trabajo', '12353', 3),
-(10, 1234509876, 'Oscar', 'Diaz', 'oscar.diaz@sena.edu.co', 2147483647, 'Tecnología en Gestión del Talento Humano', '12354', 1),
-(12, 10343022, 'dana', 'sanchez', 'ds@gmail.com', 2147483647, 'Programación', '2692926', 1),
-(17, 1056504326, 'Angela', 'Lopez', 'angela12@gmail.com', 2147483647, 'ADSO', '213456', 1),
-(25, 1014987765, 'Anita maria', 'Lopez Obrado', 'ronalmedina5656@gmail.com', 2147483647, 'Análisis y desarrollo de software ', '2692926', 1),
-(26, 12345, 'Anita', 'Sanchez', 'carolahindiaz@gmail.com', 2147483647, 'ADSO', '2692926', 11),
-(27, 1234, 'Jean', 'fonseca', 'velandiafonseca@gmail.com', 2147483647, 'Tecnico ciberseguridad', '4536554', 11),
-(28, 101452, 'Camilo', 'Medina', 'medina@gmail.com', 2147483647, 'Adso', '26543432', 11),
-(32, 1983457238, 'Angel', 'Parra', 'angel@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2696987', 11),
-(41, 1065967895, 'Angela', 'Rodriguez', 'angela@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 12),
-(42, 1069584367, 'Raul', 'Ramirez', 'raul1@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 11),
-(43, 1892837465, 'Alejandro', 'Lopez', 'alejandro@gmail.com', 2147483647, 'Análisis y desarrollo de software', '2692926', 14),
-(44, 1059438930, 'Andres', 'Sanchez', 'andres@gmail.com', 2147483647, 'ADSO', '2897605', 11),
-(45, 1029383838, 'Felipe', 'velandia', 'felipe@gmail.com', 2147483647, 'Análisis y desarrollo de software', '2692926', 14),
-(46, 2039203754, 'julian', 'gomez', 'julian@gmail.com', 2147483647, 'Análisis y desarrollo de software', '2897605', 15),
-(47, 10893637, 'Ivan', 'Flores', 'ivan@gmail.com', 2147483647, 'Análisis y desarrollo de software', '2897605', 11),
-(48, 29282738423, 'David', 'Garcia', 'david@gmail.com', 2147483647, 'Análisis y desarrollo de software', '2692926', 12),
-(49, 82828282, 'Fernanda', 'Martinez', 'fernanda@gmail.com', 32189867, 'Análisis y desarrollo de software', '2692926', 15),
-(50, 2928374654, 'Maria', 'Gutiérrez', 'maria@gmail.clom', 2147483647, 'Análisis y desarrollo de software', '2692926', 14);
+INSERT INTO `aprendiz` (`id`, `tipo_documento_aprendiz`, `documento`, `nombre`, `apellido`, `email`, `telefono`, `programa`, `ficha`, `id_usuario`) VALUES
+(1, 'CC', 1234567890, 'Andrea', 'Martinez', 'andrea.martinez@sena.edu.co', 2147483647, 'Tecnología en Análisis y Desarrollo de Sistemas de', '12345', 1),
+(2, 'TI', 2345678901, 'Carlos', 'Gutierrez', 'carlos.gutierrez@sena.edu.co', 2147483647, 'Tecnología en Gestión de Redes', '12346', 2),
+(3, 'CE', 3456789012, 'Lucia', 'Fernandez', 'lucia.fernandez@sena.edu.co', 2147483647, 'Tecnología en Gestión Administrativa', '12347', 3),
+(4, 'CC', 4567890123, 'Jorge', 'Ramirez', 'jorge.ramirez@sena.edu.co', 2147483647, 'Tecnología en Diseño de Productos Industriales', '12348', 1),
+(5, 'TI', 5678901234, 'Natalia', 'Torres', 'natalia.torres@sena.edu.co', 2147483647, 'Tecnología en Producción Agrícola', '12349', 2),
+(6, 'CE', 6789012345, 'David', 'Herrera', 'david.herrera@sena.edu.co', 2147483647, 'Tecnología en Gestión Empresarial', '12350', 3),
+(7, 'CC', 7890123456, 'Elena', 'Lopez', 'elena.lopez@sena.edu.co', 2147483647, 'Tecnología en Construcción', '12351', 1),
+(8, 'TI', 8901234567, 'Miguel', 'Sanchez', 'miguel.sanchez@sena.edu.co', 2147483647, 'Tecnología en Desarrollo de Software', '12352', 2),
+(9, 'CE', 9012345678, 'Laura', 'Castillo', 'laura.castillo@sena.edu.co', 2147483647, 'Tecnología en Seguridad y Salud en el Trabajo', '12353', 3),
+(10, 'CC', 1234509876, 'Oscar', 'Diaz', 'oscar.diaz@sena.edu.co', 2147483647, 'Tecnología en Gestión del Talento Humano', '12354', 1),
+(12, 'TI', 10343022, 'Dana', 'Sanchez', 'ds@gmail.com', 2147483647, 'Programación', '2692926', 1),
+(17, 'CE', 1056504326, 'Angela', 'Lopez', 'angela12@gmail.com', 2147483647, 'ADSO', '213456', 1),
+(25, 'CC', 1014987765, 'Anita Maria', 'Lopez Obrado', 'ronalmedina5656@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 1),
+(26, 'TI', 12345, 'Anita', 'Sanchez', 'carolahindiaz@gmail.com', 2147483647, 'ADSO', '2692926', 11),
+(27, 'CE', 1234, 'Jean', 'Fonseca', 'velandiafonseca@gmail.com', 2147483647, 'Tecnico Ciberseguridad', '4536554', 11),
+(28, 'CC', 101452, 'Camilo', 'Medina', 'medina@gmail.com', 2147483647, 'ADSO', '26543432', 11),
+(32, 'TI', 1983457238, 'Angel', 'Parra', 'angel@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2696987', 11),
+(41, 'CE', 1065967895, 'Angela', 'Rodriguez', 'angela@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 12),
+(42, 'CC', 1069584367, 'Raul', 'Ramirez', 'raul1@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 11),
+(43, 'TI', 1892837465, 'Alejandro', 'Lopez', 'alejandro@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 14),
+(44, 'CE', 1059438930, 'Andres', 'Sanchez', 'andres@gmail.com', 2147483647, 'ADSO', '2897605', 11),
+(45, 'CC', 1029383838, 'Felipe', 'Velandia', 'felipe@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 14),
+(46, 'TI', 2039203754, 'Julian', 'Gomez', 'julian@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2897605', 15),
+(47, 'CE', 10893637, 'Ivan', 'Flores', 'ivan@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2897605', 11),
+(48, 'CC', 29282738423, 'David', 'Garcia', 'david@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 12),
+(49, 'TI', 82828282, 'Fernanda', 'Martinez', 'fernanda@gmail.com', 32189867, 'Análisis y Desarrollo de Software', '2692926', 15),
+(50, 'CE', 2928374654, 'Maria', 'Gutiérrez', 'maria@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 14),
+(54, 'CC', 1057164018, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'ADSO', '2692926', 16),
+(55, 'CC', 0, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'analisis_y_desarrollo_de_software', '2692926', 16),
+(56, 'TI', 1057164018, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'analisis_y_desarrollo_de_software', '2692926', 12);
 
 -- --------------------------------------------------------
 
@@ -118,7 +122,10 @@ INSERT INTO `casos` (`id`, `descripcion`, `categoria`, `soporte`, `fecha`, `esta
 (30, ' No tiene una buena convivencia con los instructores ', 'sociales', '../../Uploads/Casos/fotografias.docx', '2024-06-26', 'En espera', 47, 11, 15),
 (31, ' Encontró trabajo y no puede seguir en formación', 'laborales', '../../Uploads/Casos/18ejercicios pcint hacer 20.pdf.crdownload (1).pdf', '2024-06-26', 'En proceso', 48, 12, 12),
 (32, ' Se quedo sin un pie por accidente de transito', 'salud', '../../Uploads/Casos/EL TRABAJIÑO.docx', '2024-06-26', 'En espera', 49, 15, 14),
-(33, ' No cumple con la asistencia', 'academiacos', '../../Uploads/Casos/White and Pink Doodle Handwritten Mind Map Brainstorm.png', '2024-06-27', 'En proceso', 50, 14, 12);
+(33, ' No cumple con la asistencia', 'academiacos', '../../Uploads/Casos/White and Pink Doodle Handwritten Mind Map Brainstorm.png', '2024-06-27', 'En proceso', 50, 14, 12),
+(34, ' necesita apoyo de sostenimiento', 'economicos', '../../Uploads/Casos/Manipulación De Ítems.docx', '2024-08-08', 'En espera', 54, 16, 16),
+(35, ' El aprendiz tubo una oportunidad de trabajo ', 'laborales', '../../Uploads/Casos/Desarrolo de modelo entidad.xlsx', '2024-08-08', 'En espera', 55, 16, 16),
+(36, ' El aprendiz tiene dificultades para aprender ', 'academiacos', '../../Uploads/Casos/', '2024-08-08', 'En espera', 56, 12, 12);
 
 -- --------------------------------------------------------
 
@@ -191,6 +198,7 @@ INSERT INTO `seguimiento_casos` (`id`, `estrategia`, `id_caso`, `id_encargado`, 
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
+  `tipo_documento` varchar(20) NOT NULL,
   `documento` int(11) NOT NULL,
   `nombre` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
@@ -203,21 +211,22 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `documento`, `nombre`, `email`, `telefono`, `clave`, `rol`) VALUES
-(1, 0, 'Juan Perez', 'juan.perez@sena.edu.co', 2147483647, 'clave_segura_1', 'instructor'),
-(2, 0, 'Maria Garcia', 'maria.garcia@sena.edu.co', 2147483647, 'clave_segura_2', 'instructor'),
-(3, 0, 'Carlos Lopez', 'carlos.lopez@sena.edu.co', 2147483647, 'clave_segura_3', 'instructor'),
-(4, 0, 'Ana Martinez', 'ana.martinez@sena.edu.co', 2147483647, 'clave_segura_4', 'coordinadorAcademico'),
-(5, 0, 'Luis Rodriguez', 'luis.rodriguez@sena.edu.co', 2147483647, 'clave_segura_5', 'coordinadorAcademico'),
-(6, 0, 'Laura Gonzalez', 'laura.gonzalez@sena.edu.co', 2147483647, 'clave_segura_6', 'coordinadorFormacion'),
-(7, 0, 'Jorge Ramirez', 'jorge.ramirez@sena.edu.co', 2147483647, 'clave_segura_7', 'coordinadorFormacion'),
-(8, 0, 'Sofia Fernandez', 'sofia.fernandez@sena.edu.co', 2147483647, 'clave_segura_8', 'bienestar'),
-(9, 0, 'David Diaz', 'david.diaz@sena.edu.co', 2147483647, 'clave_segura_9', 'bienestar'),
-(10, 1096547908, 'Carolina Torres', 'carolina.torres@sena.edu.co', 2147483647, '698d51a19d8a121ce581499d7b701668', 'bienestar'),
-(11, 1014193937, 'Andrea Flores', 'velandiafonseca@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'instructor'),
-(12, 1056504370, 'Dana', 'dsofia0528@gmail.com', 2147483647, '81dc9bdb52d04dc20036dbd8313ed055', 'bienestar'),
-(14, 1014193937, 'Karen', 'karencamacho484@gmail.com', 2147483647, '827ccb0eea8a706c4c34a16891f84e7b', 'coordinadorAcademico'),
-(15, 1098374657, 'jhojana', 'jhojana@gmail.com', 2147483647, '3b712de48137572f3849aabd5666a4e3', 'coordinadorFormacion');
+INSERT INTO `usuarios` (`id`, `tipo_documento`, `documento`, `nombre`, `email`, `telefono`, `clave`, `rol`) VALUES
+(1, 'CC', 0, 'Juan Perez', 'juan.perez@sena.edu.co', 2147483647, 'clave_segura_1', 'instructor'),
+(2, 'CC', 0, 'Maria Garcia', 'maria.garcia@sena.edu.co', 2147483647, 'clave_segura_2', 'instructor'),
+(3, 'CC', 0, 'Carlos Lopez', 'carlos.lopez@sena.edu.co', 2147483647, 'clave_segura_3', 'instructor'),
+(4, 'CC', 0, 'Ana Martinez', 'ana.martinez@sena.edu.co', 2147483647, 'clave_segura_4', 'coordinadorAcademico'),
+(5, 'CC', 0, 'Luis Rodriguez', 'luis.rodriguez@sena.edu.co', 2147483647, 'clave_segura_5', 'coordinadorAcademico'),
+(6, 'CC', 0, 'Laura Gonzalez', 'laura.gonzalez@sena.edu.co', 2147483647, 'clave_segura_6', 'coordinadorFormacion'),
+(7, 'CC', 0, 'Jorge Ramirez', 'jorge.ramirez@sena.edu.co', 2147483647, 'clave_segura_7', 'coordinadorFormacion'),
+(8, 'CC', 0, 'Sofia Fernandez', 'sofia.fernandez@sena.edu.co', 2147483647, 'clave_segura_8', 'bienestar'),
+(9, 'CC', 0, 'David Diaz', 'david.diaz@sena.edu.co', 2147483647, 'clave_segura_9', 'bienestar'),
+(10, 'CC', 1096547908, 'Carolina Torres', 'carolina.torres@sena.edu.co', 2147483647, '698d51a19d8a121ce581499d7b701668', 'bienestar'),
+(11, 'CC', 1014193937, 'Andrea Flores', 'velandiafonseca@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'instructor'),
+(12, 'CC', 1056504370, 'Dana', 'dsofia0528@gmail.com', 2147483647, '81dc9bdb52d04dc20036dbd8313ed055', 'bienestar'),
+(14, 'CC', 1014193937, 'Karen', 'karencamacho484@gmail.com', 2147483647, '827ccb0eea8a706c4c34a16891f84e7b', 'coordinadorAcademico'),
+(15, 'CC', 1098374657, 'jhojana', 'jhojana@gmail.com', 2147483647, '3b712de48137572f3849aabd5666a4e3', 'coordinadorFormacion'),
+(16, 'CC', 1057164018, 'Jean Carlos', 'v@v', 456987, '202cb962ac59075b964b07152d234b70', 'coordinadorAcademico');
 
 --
 -- Índices para tablas volcadas
@@ -262,13 +271,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `aprendiz`
 --
 ALTER TABLE `aprendiz`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `casos`
 --
 ALTER TABLE `casos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `seguimiento_casos`
@@ -280,7 +289,7 @@ ALTER TABLE `seguimiento_casos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Restricciones para tablas volcadas
