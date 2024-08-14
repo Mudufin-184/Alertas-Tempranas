@@ -237,7 +237,7 @@ class ConsultasCoordinador {
         $result2->bindParam(':aspectos_extras', $aspectos_extras);
         $result2->bindParam(':fecha', $fecha);
         $result2->execute();
-        echo"<script>alert('Se agregó el respectivo seguimiento al caso :)')</script>";
+        echo"<script>alert('Se agregó el respectivo seguimiento al caso ')</script>";
         echo"<script> location.href='../../Views/coordinador/consultarSeguimiento_Filtro.php' </script>";
 
     }
