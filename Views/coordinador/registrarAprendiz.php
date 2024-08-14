@@ -212,10 +212,22 @@ $encargados = $objConsultas->CargarEncargado();
                     <!-- Programa del aprendiz -->
                     <div class="col-md-12 campo">
                       <label for="aprendiz_Programa">Programa:</label> <br>
+<<<<<<< HEAD
                       <input type="text" placeholder="Ej:Análisis y desarrollo de software"  id="aprendiz_Programa" class="input" name="programa">
                     </div>
                     
                    <div class="text-center">
+=======
+                      <select id="aprendiz_Programa" class="input" name="programa">
+                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
+                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
+                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
+                        <!-- Puedes agregar más opciones aquí si es necesario -->
+                      </select>
+                    </div>
+
+                    <div class="text-center">
+>>>>>>> Modificacioes-registrar-caso
                       <button type="button" class="form-button btn-next">Siguiente</button>
                     </div>
                 </div>
