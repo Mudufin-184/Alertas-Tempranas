@@ -40,7 +40,7 @@ class ConsultasInstructor {
 
         $result2->execute();
 
-        echo"<script> alert('El  caso ha sido registrado;)') </script>";
+        echo"<script> alert('El  caso ha sido registrado') </script>";
         echo"<script> location.href='../../Views/instructor/index.php' </script>";
 
         

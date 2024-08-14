@@ -61,11 +61,11 @@ class ValidarSesion{
 
 
             }else{
-                echo"<script> alert('La clave es incorrecta :)') </script>";
+                echo"<script> alert('La clave es incorrecta ') </script>";
             echo"<script> location.href='../Views/extras/iniciarSesion.php' </script>";
             }
         } else{
-            echo"<script> alert('El email no existe en la base de datos, Registrese :)') </script>";
+            echo"<script> alert('El email no existe en la base de datos, Registrese ') </script>";
             echo"<script> location.href='../Views/extras/registroUsuario.php' </script>";
         }
     }
