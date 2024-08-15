@@ -159,18 +159,16 @@ require_once("../../Models/consultasCoordinador.php");
       <div class="row">
         <div class="col-lg-12">
 
-          <div class="card ">
-            <div class="card-body ">
-              <h5 class="card-title">Consultar Detalle del Caso</h5>
-
-                <?php
-                  cargarDetalles();  
-                ?>
-
-              <!-- End Table with stripped rows -->
-
+        <div class="card ">
+            <div class="card-detalle" style="padding: 29px 14px";>
+              <h3 class="titulo">Detalle del Caso</h3>
+              <div class="row">
+                  <?php
+                    cargarDetalles();  
+                  ?>            
+              </div>
             </div>
-          </div>
+         </div>
 
         </div>
       </div>

@@ -302,6 +302,15 @@ $encargados = $objConsultas->CargarEncargado();
                 <!-- Multi Columns Form -->
                 <div class="row g-3 formulario">
                   <h5>Paso 1: Información Aprendiz</h5>
+                  <!-- Tipo de Documento -->
+                  <div class="col-md-6 campo">
+                      <label for="tipo_documento">Tipo de Documento:</label> <br>
+                      <select id="tipo_documento" class="input" name="tipo_documento">
+                        <option value="CC">Cédula de ciudadanía</option>
+                        <option value="TI">Tarjeta de identidad</option>
+                        <option value="CE">Cédula de extranjería</option>
+                      </select>
+                    </div>
                     <!-- Numero de Identificación -->
                     <div class="col-md-6 campo">
                       <label for="identificacion">Numero de Identificación:</label> <br>
@@ -319,7 +328,7 @@ $encargados = $objConsultas->CargarEncargado();
                     </div>
 
                    <!-- Email del aprendiz -->
-                    <div class="col-md-6 campo">
+                    <div class="col-md-12 campo">
                       <label for="aprendiz_Email">Email Del Aprendiz:</label> <br>
                       <input type="email" placeholder="Ej:daniel@gmail.com"  id="aprendiz_Email" class="input" name="email">
                     </div>

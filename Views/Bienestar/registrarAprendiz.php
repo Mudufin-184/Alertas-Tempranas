@@ -146,7 +146,7 @@ $encargados = $objConsultas->CargarEncargado();
 
     <section class="section dashboard">
 
-    <form action="../../Controllers/bienestar/registrar_caso.php" class="form" method="post" enctype="multipart/form-data">
+    <form action="../../Controllers/coordinador/registrar_caso.php" class="form" method="post" enctype="multipart/form-data">
         <!-- progress bar -->
         <div class="progressbar">
             <div class="progress" id="progress"></div>
@@ -168,7 +168,16 @@ $encargados = $objConsultas->CargarEncargado();
                 <!-- Multi Columns Form -->
                 <div class="row g-3 formulario">
                   <h5>Paso 1: Información Aprendiz</h5>
-                    <!-- Numero de Identificación -->
+                    <!-- Tipo de Documento -->
+                    <div class="col-md-6 campo">
+                      <label for="tipo_documento">Tipo de Documento:</label> <br>
+                      <select id="tipo_documento" class="input" name="tipo_documento">
+                        <option value="CC">Cédula de ciudadanía</option>
+                        <option value="TI">Tarjeta de identidad</option>
+                        <option value="CE">Cédula de extranjería</option>
+                      </select>
+                    </div>
+                    <!-- Numero de Identificación -->                  
                     <div class="col-md-6 campo">
                       <label for="identificacion">Numero de Identificación:</label> <br>
                       <input type="text" placeholder="Ej: 123456" id="identificacion" class="input" name="identificacion">
@@ -185,7 +194,7 @@ $encargados = $objConsultas->CargarEncargado();
                     </div>
 
                    <!-- Email del aprendiz -->
-                    <div class="col-md-6 campo">
+                    <div class="col-md-12 campo">
                       <label for="aprendiz_Email">Email Del Aprendiz:</label> <br>
                       <input type="email" placeholder="Ej:daniel@gmail.com"  id="aprendiz_Email" class="input" name="email">
                     </div>
@@ -208,12 +217,13 @@ $encargados = $objConsultas->CargarEncargado();
                       <label for="aprendiz_Programa">Programa:</label> <br>
                       <select id="aprendiz_Programa" class="input" name="programa">
                         <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
+                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
+                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
                         <!-- Puedes agregar más opciones aquí si es necesario -->
                       </select>
                     </div>
 
-                    
-                   <div class="text-center">
+                    <div class="text-center">
                       <button type="button" class="form-button btn-next">Siguiente</button>
                     </div>
                 </div>

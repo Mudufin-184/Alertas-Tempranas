@@ -76,17 +76,24 @@ function cargarDetalles() {
     $result = $objConsultas->consultarCasosDet($id_caso);
     // echo'<script>alert("'.$result.'")</script>';
         foreach ($result as $f) {
-            echo '
-            <label class="modal-detalles" for="">Ficha:</label>'.$f['ficha'].' <br>
-            <label class="modal-detalles" for="">Nombre:</label>'.$f['nombre'].' '.$f['apellido'].' <br>
-            <label class="modal-detalles" for="">Telefono:</label>'.$f['telefono'].' <br>
-            <label class="modal-detalles" for="">Email:</label>'.$f['email'].' <br>
-            <label class="modal-detalles" for="">Programa:</label>'.$f['programa'].'<br>
-            <label class="modal-detalles" for="">Categoria:</label>'.$f['categoria'].' <br>
-            <label class="modal-detalles" for="">Nombre del encargado:</label>'.$f['nombre_encargado'].' <br>
-            <label class="modal-detalles" for="">Fecha:</label>'.$f['fecha'].'<br>
-            <label class="modal-detalles" for="">Motivo:</label>'.$f['descripcion'].'<br>
-            ';
+          echo '
+          <div class="col-md-4">
+              <label class="modal-detalles" for="">Ficha:</label>'.$f['ficha'].' <br>
+              <label class="modal-detalles" for="">Nombre:</label>'.$f['nombre'].' '.$f['apellido'].' <br>
+              <label class="modal-detalles" for="">Telefono:</label>'.$f['telefono'].' <br>
+              <label class="modal-detalles" for="">Estado:</label>'.$f['estado'].'<br>
+          </div>
+          <div class="col-md-4">
+              <label class="modal-detalles" for="">Email:</label>'.$f['email'].' <br>
+              <label class="modal-detalles" for="">Programa:</label>'.$f['programa'].'<br>
+              <label class="modal-detalles" for="">Categoria:</label>'.$f['categoria'].' <br>
+          </div>
+          <div class="col-md-4">
+              <label class="modal-detalles" for="">Nombre del encargado:</label>'.$f['nombre_encargado'].' <br>
+              <label class="modal-detalles" for="">Fecha:</label>'.$f['fecha'].'<br>
+              <label class="modal-detalles" for="">Motivo:</label>'.$f['descripcion'].'<br>         
+          </div>
+          ';
         }
 }
 
@@ -109,7 +116,7 @@ function cargarInfoDetalles() {
                 <label class="modal-detalles" for="">Categoria:</label>'.$f['categoria'].' <br>
               </div>
               <div class="col-md-4">
-                <label class="modal-detalles" for="">Nombre del instructor:</label>'.$f['nombre_usuario'].' <br>
+                <label class="modal-detalles" for="">Nombre de quien registro:</label>'.$f['nombre_usuario'].' <br>
                 <label class="modal-detalles" for="">Fecha Creacion:</label>'.$f['fecha'].'<br>
                 <label class="modal-detalles" for="">Motivo:</label>'.$f['descripcion'].'<br>
               </div>
@@ -315,7 +322,7 @@ function cargarCasoEdit(){
         ';
 
     } else{
-      echo"<script>alert('No se puede modificar el caso')</script>";
+      echo"<script>alert('No se puede modificar debido a que el caso se encuentra Finalizado')</script>";
       echo"<script> location.href='../../Views/coordinador/consultarSeguimiento_Filtro.php' </script>";
     
     }
