@@ -350,12 +350,20 @@ $encargados = $objConsultas->CargarEncargado();
                     <div class="col-md-12 campo">
                       <label for="aprendiz_Programa">Programa:</label> <br>
                       <select id="aprendiz_Programa" class="input" name="programa">
-                        <option value="ADSO">Análisis y Desarrollo de Software (ADSO)</option>
-                        <!-- Puedes agregar más opciones aquí si es necesario -->
+                        <option value="Análisis y Desarrollo de Software">Análisis y Desarrollo de Software</option>
+                        <option value="ASEGURAMIENTO_METROLOGICO_INDUSTRIAL">Aseguramiento Metrológico Industrial</option>
+                        <option value="DESARROLLO_CREATIVO_PRODUCTOS_INDUSTRIA">Desarrollo Creativo de Productos para la Industria</option>
+                        <option value="DESARROLLO_COMPONENTES_MECANICOS">Desarrollo de Componentes Mecánicos</option>
+                        <option value="DESARROLLO_ADAPTACION_PROTESIS_ORTESIS">Desarrollo y Adaptación de Prótesis y Órtesis</option>
+                        <option value="DISENO_INTEGRACION_AUTOMATISMOS_MECATRONICOS">Diseño e Integración de Automatismos Mecatrónicos</option>
+                        <option value="CONTROL_SEGURIDAD_DIGITAL">Control de la Seguridad Digital</option>
+                        <option value="DIBUJO_MECANICO">Dibujo Mecánico</option>
+                        <option value="MODELADO_3D_INDUSTRIA">Modelado 3D para la Industria</option>
+                        <option value="MODELADO_DIGITAL_PRODUCTOS_INDUSTRIALES">Modelado Digital de Productos Industriales</option>
+                        <option value="PROGRAMACION_SOFTWARE">Programación de Software</option>
                       </select>
                     </div>
-
-                    
+                                       
                    <div class="text-center">
                       <button type="button" class="form-button btn-next">Siguiente</button>
                     </div>
