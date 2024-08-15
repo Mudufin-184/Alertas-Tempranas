@@ -48,55 +48,59 @@ class ConsultasInstructor {
 
 
     public function consultarCasosReg($id_usuario){
-
-
         $objConexion = new Conexion();
         $conexion = $objConexion->getConexion();
-
-        
-
-
-        $consultar= "SELECT c.id as identificador_caso, a.id as id_aprendiz, a.ficha, a.nombre, a.apellido, c.descripcion , c.categoria, c.id_encargado FROM casos c JOIN aprendiz a ON c.id_aprendiz = a.id JOIN usuarios u ON c.id_encargado = u.id WHERE c.id_usuario=  :id_usuario ";
-
-        $result= $conexion->prepare($consultar);
-
-        $result->bindparam(':id_usuario', $id_usuario);
-
+    
+        // Modificamos la consulta para incluir el nombre y apellido del encargado
+        $consultar= "SELECT 
+                        c.id as identificador_caso, 
+                        a.id as id_aprendiz, 
+                        a.ficha, 
+                        a.nombre, 
+                        a.apellido, 
+                        c.descripcion, 
+                        c.categoria, 
+                        u.nombre AS nombre_encargado
+                    FROM casos c 
+                    JOIN aprendiz a ON c.id_aprendiz = a.id 
+                    JOIN usuarios u ON c.id_encargado = u.id 
+                    WHERE c.id_usuario= :id_usuario";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(':id_usuario', $id_usuario);
         $result->execute();
-        
-        $f= [];
-
-        while($resultado = $result->fetch()){
+    
+        $f = [];
+    
+        while ($resultado = $result->fetch()) {
             $f[] = $resultado;
         }
-
+    
         return $f;
-
-
     }
 
     public function consultarCasosDet($id_caso){
         $objConexion = new Conexion();
         $conexion = $objConexion->getConexion();
-
-        $consultar= "SELECT a.ficha, a.nombre, a.apellido, a.telefono, a.email, a.programa, c.categoria, u.nombre AS nombre_encargado, c.fecha, c.descripcion FROM casos c JOIN aprendiz a ON c.id_aprendiz = a.id JOIN usuarios u ON c.id_encargado = u.id WHERE c.id = :id_caso";
-
-        $result= $conexion->prepare($consultar);
-
+    
+        $consultar = "SELECT a.ficha, a.nombre, a.apellido, a.telefono, a.email, a.programa, c.categoria, c.estado, u.nombre AS nombre_encargado, c.fecha, c.descripcion 
+                      FROM casos c 
+                      JOIN aprendiz a ON c.id_aprendiz = a.id 
+                      JOIN usuarios u ON c.id_encargado = u.id 
+                      WHERE c.id = :id_caso";
+    
+        $result = $conexion->prepare($consultar);
         $result->bindparam(':id_caso', $id_caso);
-
         $result->execute();
         
-        $f= array();
-
+        $f = array();
         while($resultado = $result->fetch()){
             $f[] = $resultado;
         }
-
+    
         return $f;
-
-
     }
+    
 
     public function CargarEncargado(){
         $objConexion = new Conexion();
