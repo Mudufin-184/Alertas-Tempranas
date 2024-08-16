@@ -363,7 +363,7 @@ $encargados = $objConsultas->CargarEncargado();
                         <option value="PROGRAMACION_SOFTWARE">Programación de Software</option>
                       </select>
                     </div>
-                                       
+
                    <div class="text-center">
                       <button type="button" class="form-button btn-next">Siguiente</button>
                     </div>

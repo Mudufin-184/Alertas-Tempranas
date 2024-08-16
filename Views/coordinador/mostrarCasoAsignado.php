@@ -275,7 +275,9 @@ function cargarDetallesModal(id_caso) {
   
   <!-- Biblioteca SheetJS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-  
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
