@@ -38,6 +38,19 @@ require_once("../../Models/consultasCoordinador.php");
   <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.3/b-3.0.1/b-html5-3.0.1/b-print-3.0.1/datatables.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+  /* Aplica un color gris al contenido de los campos deshabilitados (readonly) */
+    .disabled-field {
+      color: #6c757d !important;
+    }
+
+    #estrategia::placeholder,
+    #aspectos_extras::placeholder {
+    color: #333333; /* Color más oscuro */
+    opacity: 1;
+    }
+
+  </style>
   <!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
