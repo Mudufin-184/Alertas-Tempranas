@@ -5,7 +5,7 @@ require_once("../../Models/consultasBienestar.php");
 
 
 
-session_start();   //esta linea marca error  o posible error fantasma
+// session_start();   //esta linea marca error  o posible error fantasma
 function cargarCasos(){
 
     $id_usuario = $_SESSION['id'];

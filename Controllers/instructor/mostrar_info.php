@@ -1,7 +1,7 @@
 <?php
 require_once('../../Models/validarSesion.php');
 require_once('../../Models/consultasInstructor.php');
-session_start();
+// session_start();
 function cargarCasos(){
   $id_usuario = $_SESSION['id'];
   $objConsultas = new ConsultasInstructor();
