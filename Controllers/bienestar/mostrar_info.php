@@ -35,37 +35,33 @@ function cargarCasos(){
     }
 }
 
-function cargarCasosAsignados(){
-
+function cargarCasosAsignados() {
     $id_usuario = $_SESSION['id'];
     $objConsultas = new ConsultasBienestar();
     $result = $objConsultas->consultarCasosAsig($id_usuario);
 
     if (!isset($result)) {
-        // Result vacio o tabla vacia
         echo "<h2>No hay casos registrados</h2>";
     } else {
-        // Result con datos o tabla con datos
         foreach ($result as $f) {
-            // Pintamos el Html dentro del echo
             echo '
-
-<tr>
-                    <td>'.$f['ficha'].'</td>
-                    <td>'.$f['nombre'].' '.$f['apellido'].'</td>
-                    <td>'.$f['descripcion'].'</td>
-                    <td>'.$f['categoria'].'</td>
-                    <td>'.$f['estado'].'</td>
-                    <td>'.$f['fecha'].'</td>
-                    <td>
-                    <a class="detalles1" href="../../Views/bienestar/mostrarCasoAsignado.php?id='. $f['identificador_caso'].'" ><i class="fa-solid fa-eye"></i></a>
-                    <a class="detalles2" href="../../Views/bienestar/editarCaso.php?id='. $f['identificador_caso'].'"><i class="fa-solid fa-pencil"></i></a></td>
-                  </tr>
-
+            <tr>
+                <td>'.$f['ficha'].'</td>
+                <td>'.$f['nombre'].' '.$f['apellido'].'</td>
+                <td>'.$f['descripcion'].'</td>
+                <td>'.$f['categoria'].'</td>
+                <td>'.$f['estado'].'</td>
+                <td>'.$f['fecha'].'</td>
+                <td>
+                    <a class="detalles1" href="../../Views/bienestar/mostrarCasoAsignado.php?id='. $f['identificador_caso'].'"><i class="fa-solid fa-eye"></i></a>
+                    <a class="detalles2" href="../../Views/bienestar/editarCaso.php?id='. $f['identificador_caso'].'"><i class="fa-solid fa-pencil"></i></a>
+                </td>
+            </tr>
             ';
         }
     }
 }
+
 
 
 

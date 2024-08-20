@@ -97,13 +97,13 @@ require_once("../../Models/consultasInstructor.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#ruta-nav" data-bs-toggle="collapse" href="index.php">
-          <i class="fa-solid fa-route"></i><span>Ruta Atención</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-route"></i><span>Registro de Casos </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="ruta-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           
           <li>
             <a href="consultarAprendiz.php">
-            <i class="fa-solid fa-circle"></i><span>Consultar</span>
+            <i class="fa-solid fa-circle"></i><span>Consultar Registros Hechos</span>
             </a>
           </li>
         </ul>

@@ -96,17 +96,17 @@ require_once("../../Models/consultasCoordinador.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#ruta-nav" data-bs-toggle="collapse" href="index.php">
-          <i class="fa-solid fa-route"></i><span>Ruta Atención</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-solid fa-route"></i><span>Registro de Casos </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="ruta-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="registrarAprendiz.php">
-              <i class="fa-solid fa-circle"></i><span>Registrar Casos</span>
+              <i class="fa-solid fa-circle"></i><span>Registrar Nuevo Caso</span>
             </a>
           </li>
           <li>
             <a href="consultarAprendiz.php">
-              <i class="fa-solid fa-circle"></i><span>Consultar Registros</span>
+              <i class="fa-solid fa-circle"></i><span>Consultar Registros Hechos</span>
             </a>
           </li>
         </ul>
@@ -114,18 +114,18 @@ require_once("../../Models/consultasCoordinador.php");
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#seguimiento-nav" data-bs-toggle="collapse" href="index.php">
-          <i class="fa-regular fa-pen-to-square"></i><span>Gestión Seguimiento</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="fa-regular fa-pen-to-square"></i><span>Consulta de Casos Asignados</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="seguimiento-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           
           <li>
             <a href="consultarSeguimiento_Filtro.php">
-              <i class="fa-solid fa-circle"></i><span>Consultar Casos Asignados</span>
+              <i class="fa-solid fa-circle"></i><span>Mis Casos Asignados</span>
             </a>
           </li>
           <li>
             <a href="consultarSeguimientoTotal.php">
-              <i class="fa-solid fa-circle"></i><span>Consultar Trazabilidad</span>
+              <i class="fa-solid fa-circle"></i><span>Consulta General de Casos</span>
             </a>
           </li>
         </ul>
