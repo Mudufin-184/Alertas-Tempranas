@@ -200,22 +200,85 @@ require_once("../../Controllers/bienestar/mostrar_info.php");
   <script>
   $(document).ready(function() {
       $('#TableSynchronize').DataTable({
-          dom: 'Bfrtip',
+          dom: 'Bfltip', // Configuración del diseño de elementos
           buttons: [
-              'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+              {
+                  extend: 'pdf',
+                  text: ' PDF', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7] // Especifica las columnas que deseas incluir en el PDF
+                  },
+                  customize: function (doc) {
+                      doc.content.splice(0, 1, {
+                          text: 'Informe de Casos Asignados',
+                          style: 'title'
+                      });
+
+                      var dataTableContent = {
+                          table: {
+                              headerRows: 1,
+                              body: []
+                          },
+                          layout: 'lightHorizontalLines'
+                      };
+
+                      var tableRows = $('#TableSynchronize').DataTable().rows().data();
+                      tableRows.each(function (index, rowData) {
+                          var dataRow = [];
+                          $(rowData).each(function () {
+                              dataRow.push({ text: this });
+                          });
+                          dataTableContent.table.body.push(dataRow);
+                      });
+
+                      doc.content.push(dataTableContent);
+                  }
+              },
+              {
+                  extend: 'excel',
+                  text: 'Excel', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'print',
+                  text: 'Imprimir', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'copy',
+                  text: 'Copiar', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'csv',
+                  text: '  CSV', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              }
           ],
           columnDefs: [{
-              targets: -1,  // Aquí se define la columna "Acciones" como la última columna
-              orderable: false, // Evita que se ordene la columna de "Acciones"
-              searchable: false // Evita que se busque en la columna de "Acciones"
+              targets: -1,  // Última columna
+              orderable: false, // Desactiva la ordenación
+              searchable: false // Desactiva la búsqueda
           }],
           language: {
-              url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+              url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json" // URL para la localización en español
           },
-          lengthMenu: [5, 10, 25, 50, 75, 100] // Filtro de cantidad de registros
+          lengthMenu: [[5, 10, 25, 50, 75, 100], [5, 10, 25, 50, 75, 100]], // Menú de longitud personalizado
+          pageLength: 10, // Longitud de página inicial
+          dom: '<"top"fBl>rt<"bottom"ip>', // Diseño de los elementos en la tabla
       }).buttons().container().appendTo('#TableSynchronize_wrapper .col-md-6:eq(0)');
   });
 </script>
+
+
 
 
 </body>

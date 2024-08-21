@@ -24,12 +24,10 @@ require_once("../../Models/consultasCoordinador.php");
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700|Poppins:300,300i,400,400i,500,500,600,600,700,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,10 +38,14 @@ require_once("../../Models/consultasCoordinador.php");
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.3/b-3.0.1/b-html5-3.0.1/b-print-3.0.1/datatables.min.css" rel="stylesheet">
-        <link href="assets/css/style.css" rel="stylesheet">
-        <link href="assets/css/styleFicha.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+  <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -208,48 +210,111 @@ require_once("../../Models/consultasCoordinador.php");
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script
-        src="https://cdn.datatables.net/v/bs5/jq-3.7.0/jszip-3.10.1/dt-2.0.3/b-3.0.1/b-html5-3.0.1/b-print-3.0.1/datatables.min.js"></script>
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
   <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.flash.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
   <script>
-    $(document).ready(function () {
-        // Inicializa DataTables con la configuración necesaria
-        $('#TableSynchronize').DataTable({
-            buttons: [
-                'copy','excel','pdf','print' // Define los botones de descarga
-            ],
-            lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "Todo"]], // Define las opciones de cantidad de entradas por página
-            pageLength: 10, // Establece la cantidad de entradas por página predeterminada
-            dom: '<"top"fBlS>rt<"bottom"ip>', // Define la disposición de los elementos de DataTables (botones)
-            language: {
-                lengthMenu: 'Mostrar _MENU_ registros', // Cambia el texto del filtro de cantidad de entradas por página
-                search: 'Buscar:', // Cambia el texto del buscador
-                info: 'Mostrando _START_ a _END_ de _TOTAL_ entradas', // Cambia el texto de información sobre la paginación
-            }
-        });
-    });
-  </script>
-  
-  <!-- Biblioteca jsPDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-  
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.15/jspdf.plugin.autotable.min.js"></script> -->
-  
-  
-  <!-- Biblioteca SheetJS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
-  
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+  $(document).ready(function() {
+      $('#TableSynchronize').DataTable({
+          dom: 'Bfltip', // Configuración del diseño de elementos
+          buttons: [
+              {
+                  extend: 'pdf',
+                  text: ' PDF', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7] // Especifica las columnas que deseas incluir en el PDF
+                  },
+                  customize: function (doc) {
+                      doc.content.splice(0, 1, {
+                          text: 'Informe de Casos Registrados',
+                          style: 'title'
+                      });
+
+                      var dataTableContent = {
+                          table: {
+                              headerRows: 1,
+                              body: []
+                          },
+                          layout: 'lightHorizontalLines'
+                      };
+
+                      var tableRows = $('#TableSynchronize').DataTable().rows().data();
+                      tableRows.each(function (index, rowData) {
+                          var dataRow = [];
+                          $(rowData).each(function () {
+                              dataRow.push({ text: this });
+                          });
+                          dataTableContent.table.body.push(dataRow);
+                      });
+
+                      doc.content.push(dataTableContent);
+                  }
+              },
+              {
+                  extend: 'excel',
+                  text: 'Excel', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'print',
+                  text: 'Imprimir', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'copy',
+                  text: 'Copiar', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              },
+              {
+                  extend: 'csv',
+                  text: '  CSV', // Texto en español
+                  exportOptions: {
+                      columns: [1, 2, 3, 4, 5, 6, 7]
+                  }
+              }
+          ],
+          columnDefs: [{
+              targets: -1,  // Última columna
+              orderable: false, // Desactiva la ordenación
+              searchable: false // Desactiva la búsqueda
+          }],
+          language: {
+              url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json" // URL para la localización en español
+          },
+          lengthMenu: [[5, 10, 25, 50, 75, 100], [5, 10, 25, 50, 75, 100]], // Menú de longitud personalizado
+          pageLength: 10, // Longitud de página inicial
+          dom: '<"top"fBl>rt<"bottom"ip>', // Diseño de los elementos en la tabla
+      }).buttons().container().appendTo('#TableSynchronize_wrapper .col-md-6:eq(0)');
+  });
+</script>
 </body>
 
 </html>
