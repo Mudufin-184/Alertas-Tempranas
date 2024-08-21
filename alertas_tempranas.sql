@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2024 a las 21:08:47
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 21-08-2024 a las 04:43:59
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,9 +72,11 @@ INSERT INTO `aprendiz` (`id`, `tipo_documento_aprendiz`, `documento`, `nombre`, 
 (48, 'CC', 29282738423, 'David', 'Garcia', 'david@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 12),
 (49, 'TI', 82828282, 'Fernanda', 'Martinez', 'fernanda@gmail.com', 32189867, 'Análisis y Desarrollo de Software', '2692926', 15),
 (50, 'CE', 2928374654, 'Maria', 'Gutiérrez', 'maria@gmail.com', 2147483647, 'Análisis y Desarrollo de Software', '2692926', 14),
-(54, 'CC', 1057164018, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'ADSO', '2692926', 16),
-(55, 'CC', 0, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'analisis_y_desarrollo_de_software', '2692926', 16),
-(56, 'TI', 1057164018, 'Jean', 'velandia', 'velandiafonseca@gmial.com', 2147483647, 'analisis_y_desarrollo_de_software', '2692926', 12);
+(54, 'CC', 785464, 'Juan', 'López', 'Juan@gmail.com', 1234567895, 'ADSO', '568940', 16),
+(55, 'TI', 666, 'Ana', 'Gonzales', 'ana@gmail.com', 2147483647, 'ADSO', '456123', 12),
+(56, 'TI', 6488448, 'Andres', 'Cardenas', 'Andres@gmail.com', 3462166, 'ADSO', '456987', 11),
+(57, 'CE', 6595, 'Daniel', 'Rodriguez', 'Daniel@gmail.com', 2147483647, 'ADSO', '987564', 11),
+(58, 'CC', 7845632, 'Jean Carlos', 'Velandia Fonseca', 'velandiafonseca@gmail.com', 31264598, 'Análisis y Desarrollo de Software', '2692926', 12);
 
 -- --------------------------------------------------------
 
@@ -123,9 +125,11 @@ INSERT INTO `casos` (`id`, `descripcion`, `categoria`, `soporte`, `fecha`, `esta
 (31, ' Encontró trabajo y no puede seguir en formación', 'laborales', '../../Uploads/Casos/18ejercicios pcint hacer 20.pdf.crdownload (1).pdf', '2024-06-26', 'En proceso', 48, 12, 12),
 (32, ' Se quedo sin un pie por accidente de transito', 'salud', '../../Uploads/Casos/EL TRABAJIÑO.docx', '2024-06-26', 'En espera', 49, 15, 14),
 (33, ' No cumple con la asistencia', 'academiacos', '../../Uploads/Casos/White and Pink Doodle Handwritten Mind Map Brainstorm.png', '2024-06-27', 'En proceso', 50, 14, 12),
-(34, ' necesita apoyo de sostenimiento', 'economicos', '../../Uploads/Casos/Manipulación De Ítems.docx', '2024-08-08', 'En espera', 54, 16, 16),
-(35, ' El aprendiz tubo una oportunidad de trabajo ', 'laborales', '../../Uploads/Casos/Desarrolo de modelo entidad.xlsx', '2024-08-08', 'En espera', 55, 16, 16),
-(36, ' El aprendiz tiene dificultades para aprender ', 'academiacos', '../../Uploads/Casos/', '2024-08-08', 'En espera', 56, 12, 12);
+(34, ' Encontró trabajo', 'economicos', '../../Uploads/Casos/modals-should-and-must-grammar-drills_46366.docx', '2024-08-15', 'En espera', 54, 16, 16),
+(35, ' El aprendiz no presenta los resultados de aprendizaje', 'academiacos', '../../Uploads/Casos/', '2024-08-15', 'En espera', 55, 12, 12),
+(36, ' El aprendiz sufrió una caída muy grave ', 'salud', '../../Uploads/Casos/modals-should-and-must-grammar-drills_46366.docx', '2024-08-15', 'En espera', 56, 11, 16),
+(37, ' El aprendiz encontró un trabajo y no podrá seguir', 'laborales', '../../Uploads/Casos/modals-should-and-must-grammar-drills_46366.docx', '2024-08-15', 'En espera', 57, 11, 12),
+(38, ' El aprendiz tuvo una oportunidad laboral y va a dejar la formación ', 'laborales', '../../Uploads/Casos/', '2024-08-17', 'En espera', 58, 12, 12);
 
 -- --------------------------------------------------------
 
@@ -188,7 +192,8 @@ INSERT INTO `seguimiento_casos` (`id`, `estrategia`, `id_caso`, `id_encargado`, 
 (51, ' Como fue en el sena accede a la poliza', 27, 14, ' Aplazamiento si no hay solución', '2024-06-26'),
 (52, '  Como fue en el sena accede a la poliza', 27, 14, 'Adelantar guias y evidencias con su respectivo instructor', '2024-06-26'),
 (53, ' Aplazamiento por 3 meses', 31, 12, 'Ninguno ', '2024-06-26'),
-(54, ' Comite ', 33, 12, ' Ninguno', '2024-06-27');
+(54, ' Comite ', 33, 12, ' Ninguno', '2024-06-27'),
+(55, ' Verificación de conocimientos', 1, 4, '  Tutorías avanzadas para mejorar comprensión.', '2024-08-14');
 
 -- --------------------------------------------------------
 
@@ -271,19 +276,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `aprendiz`
 --
 ALTER TABLE `aprendiz`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de la tabla `casos`
 --
 ALTER TABLE `casos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `seguimiento_casos`
 --
 ALTER TABLE `seguimiento_casos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
