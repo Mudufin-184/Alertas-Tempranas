@@ -1,6 +1,6 @@
 <?php
 // Enlazamos las dependencia
-
+session_start();
 require_once("../../Models/conexionDB.php");
 require_once("../../Controllers/bienestar/seguridadAccesoBienestar.php");
 require_once("../../Controllers/bienestar/mostrar_info.php");

@@ -1,10 +1,21 @@
 <?php
 // Enlazamos las dependencia
 
+session_start();
+
 require_once("../../Models/conexionDB.php");
 // require_once("../../Controllers/coordinador/seguridadAccesoCoordinador.php");
 require_once("../../Controllers/coordinador/mostrar_info.php");
 require_once("../../Models/consultasCoordinador.php");
+
+require_once ("../../Controllers/modelo_grafico.php");
+
+$modelo = new ModeloGrafico();
+$datos = $modelo->obtenerDatosGrafico($_SESSION["id"]); 
+
+$casosEnEspera = $datos['casosEnEspera'];
+$casosEntregados = $datos['casosEntregados'];
+$casosEnProceso = $datos['casosEnProceso'];
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +56,8 @@ require_once("../../Models/consultasCoordinador.php");
 
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -52,6 +65,13 @@ require_once("../../Models/consultasCoordinador.php");
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+        #miGrafico {
+            width: 40%;  
+            margin: 0 auto;
+        }
+  </style>
+
 </head>
 
 <body>
@@ -154,7 +174,47 @@ require_once("../../Models/consultasCoordinador.php");
 
     <section class="section">
 
+    <div class="card tabla-consultar">
+          <div class="card-body tabla-consultar">
+          <canvas id="miGrafico"></canvas>
 
+            <script>
+                var ctx = document.getElementById('miGrafico').getContext('2d');
+                var miGrafico = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['En espera', 'Finalizado', 'En proceso'],
+                        datasets: [{
+                            label: 'Cantidad de Casos',
+                            data: [
+                                <?php echo $casosEnEspera; ?>, 
+                                <?php echo $casosEntregados; ?>, 
+                                <?php echo $casosEnProceso; ?>
+                            ],
+                            backgroundColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        // scales: {
+                        //     y: {
+                        //         beginAtZero: true
+                        //     }
+                        // }
+                    }
+                });
+            </script>
+          </div>
+        </div>
       <!-- TABLA CONSULTAR -->
       <div class="row">
         <div class="col-lg-12">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("../../Models/conexionDB.php");
 require_once("../../Controllers/bienestar/seguridadAccesoBienestar.php");
 require_once("../../Models/consultasBienestar.php");

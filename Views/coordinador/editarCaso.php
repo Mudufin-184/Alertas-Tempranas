@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("../../Models/conexionDB.php");
 // require_once("../../Controllers/coordinador/seguridadAccesoCoordinador.php");
 require_once("../../Controllers/coordinador/mostrar_info.php");

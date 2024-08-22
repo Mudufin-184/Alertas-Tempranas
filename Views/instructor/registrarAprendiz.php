@@ -61,12 +61,7 @@ $casosEnProceso = $datos['casosEnProceso'];
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-        #miGrafico {
-            width: 40%;  
-            margin: 0 auto;
-        }
-  </style>
+ 
 </head>
 
 <body>
@@ -152,51 +147,179 @@ $casosEnProceso = $datos['casosEnProceso'];
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    
-    <section class="section dashboard">
-        <div class="card tabla-consultar">
-          <div class="card-body tabla-consultar">
-          <canvas id="miGrafico"></canvas>
+    <section class="section dashboard">       
+    <?php
 
-            <script>
-                var ctx = document.getElementById('miGrafico').getContext('2d');
-                var miGrafico = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        labels: ['En espera', 'Finalizado', 'En proceso'],
-                        datasets: [{
-                            label: 'Cantidad de Casos',
-                            data: [
-                                <?php echo $casosEnEspera; ?>, 
-                                <?php echo $casosEntregados; ?>, 
-                                <?php echo $casosEnProceso; ?>
-                            ],
-                            backgroundColor: [
-                                'rgba(255, 99, 132)',
-                                'rgba(54, 162, 235)',
-                                'rgba(255, 206, 86)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132)',
-                                'rgba(54, 162, 235)',
-                                'rgba(255, 206, 86)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        // scales: {
-                        //     y: {
-                        //         beginAtZero: true
-                        //     }
-                        // }
-                    }
-                });
-            </script>
-          </div>
+      require_once("../../Models/conexionDB.php");
+      require_once("../../Models/consultasInstructor.php");
+
+      $objConsultas = new ConsultasInstructor();
+
+      $encargados = $objConsultas->CargarEncargado();
+
+    ?>
+      <form action="../../Controllers/instructor/registrar_caso.php" class="form" method="post" enctype="multipart/form-data" >
+        <!-- progress bar -->
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div class="progress-step" >
+                <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+            <div class="progress-step">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
         </div>
-        
+    
+        <!-- Formulario 1 -->
+        <div class="card form-step form-step-active">
+   
+            <div class="card-body">
+              
+                <!-- Multi Columns Form -->
+                <div class="row g-3 formulario">
+                  <h5>Paso 1: Información Aprendiz</h5>
+                  <!-- Tipo de Documento -->
+                  <div class="col-md-6 campo">
+                      <label for="tipo_documento">Tipo de Documento:</label> <br>
+                      <select id="tipo_documento" class="input" name="tipo_documento">
+                        <option value="CC">Cédula de ciudadanía</option>
+                        <option value="TI">Tarjeta de identidad</option>
+                        <option value="CE">Cédula de extranjería</option>
+                      </select>
+                    </div>
+                    <!-- Numero de Identificación -->
+                    <div class="col-md-6 campo">
+                      <label for="identificacion">Numero de Identificación:</label> <br>
+                      <input type="text" placeholder="Ej: 123456" id="identificacion" class="input" name="identificacion">
+                    </div>
+                    <!-- Nombre del aprendiz -->
+                    <div class="col-md-6 campo">
+                      <label for="aprendiz_Nom">Nombre Del Aprendiz:</label> <br>
+                      <input type="text" placeholder="Ej: Daniel Andres" id="aprendiz_Nom" class="input" name="nombre">
+                    </div>
+                    <!-- Apellidos del aprendiz -->
+                    <div class="col-md-6 campo">
+                      <label for="aprendiz_Ape">Apellidos Del Aprendiz:</label> <br>
+                      <input type="text" placeholder="Ej: Rodriguez Lopez" id="aprendiz_Ape" class="input" name="apellido">
+                    </div>
 
+                   <!-- Email del aprendiz -->
+                    <div class="col-md-12 campo">
+                      <label for="aprendiz_Email">Email Del Aprendiz:</label> <br>
+                      <input type="email" placeholder="Ej:daniel@gmail.com"  id="aprendiz_Email" class="input" name="email">
+                    </div>
+
+
+                    <!-- Telefono del aprendiz -->
+                    <div class="col-md-6 campo">
+                      <label for="aprendiz_Telefono">Telefono Del Aprendiz:</label> <br>
+                      <input type="number" placeholder="Ej:3214565342"  id="aprendiz_Telefono" class="input" name="telefono">
+                    </div>
+
+                    <!-- ficha del aprendiz -->
+                    <div class="col-md-6 campo">
+                      <label for="aprendiz_Ficha">Ficha:</label> <br>
+                      <input type="text" placeholder="Ej:2692926"  id="aprendiz_Ficha" class="input" name="ficha">
+                    </div> 
+
+                    <!-- Programa del aprendiz -->
+                    <div class="col-md-12 campo">
+                      <label for="aprendiz_Programa">Programa:</label> <br>
+                      <select id="aprendiz_Programa" class="input" name="programa">
+                        <option value="Análisis y Desarrollo de Software">Análisis y Desarrollo de Software</option>
+                        <option value="ASEGURAMIENTO_METROLOGICO_INDUSTRIAL">Aseguramiento Metrológico Industrial</option>
+                        <option value="DESARROLLO_CREATIVO_PRODUCTOS_INDUSTRIA">Desarrollo Creativo de Productos para la Industria</option>
+                        <option value="DESARROLLO_COMPONENTES_MECANICOS">Desarrollo de Componentes Mecánicos</option>
+                        <option value="DESARROLLO_ADAPTACION_PROTESIS_ORTESIS">Desarrollo y Adaptación de Prótesis y Órtesis</option>
+                        <option value="DISENO_INTEGRACION_AUTOMATISMOS_MECATRONICOS">Diseño e Integración de Automatismos Mecatrónicos</option>
+                        <option value="CONTROL_SEGURIDAD_DIGITAL">Control de la Seguridad Digital</option>
+                        <option value="DIBUJO_MECANICO">Dibujo Mecánico</option>
+                        <option value="MODELADO_3D_INDUSTRIA">Modelado 3D para la Industria</option>
+                        <option value="MODELADO_DIGITAL_PRODUCTOS_INDUSTRIALES">Modelado Digital de Productos Industriales</option>
+                        <option value="PROGRAMACION_SOFTWARE">Programación de Software</option>
+                      </select>
+                    </div>
+
+                   <div class="text-center">
+                      <button type="button" class="form-button btn-next">Siguiente</button>
+                    </div>
+                </div>
+              </div>
+          </div>
+    
+        <!-- Formulario 2 -->
+        <div class="card form-step">
+            <div class="card-body">
+                <!-- Multi Columns Form -->
+                <div class="row g-3 formulario">
+                  <h5>Paso 2: Información Del Motivo </h5>
+                   <!-- Categoria -->
+                   <div class="col-md-6 campo">
+                      <label for="motivo_categoria">Categoria:</label> <br>
+                      <select id="motivo_categoria" name="categoria" class="select" required>
+                        <option >Seleccione un Motivo...</option>
+                        <option value="economicos">Economicos</option>
+                        <option value="laborales">Laborales</option>
+                        <option value="familiares">Familiares</option>
+                        <option value="salud">Salud</option>
+                        <option value="sociales">Sociales</option>
+                        <option value="academiacos">Academicos</option>
+                        <option value="calidad">Calidad del Programa</option>
+                        <option value="condiciones">Condiciones Institucionales </option>
+                      </select>
+                    </div>
+                    <!-- soporte -->
+                    <div class="col-md-6 campo">
+                      <label for="soporte">Soporte:</label> <br>
+                      <input type="file" id="soporte" class="input" name="soporte" >
+                    </div> 
+                    <!-- Nombre del encargado -->
+                    <div class="col-md-6 campo">
+                      <label for="id_encargado">Encargado:</label> <br>
+                      <select name="id_encargado" id="encargado" class="select" required>
+                        <option value="">Seleccione un encargado</option>
+                        <?php
+                        foreach ($encargados as $encargado) {
+                            echo '<option value="' . $encargado['id'] . '">' . $encargado['nombre'] . ' - ('.$encargado['rol'].')</option>';
+                        }
+                      
+                        ?>
+                   </select>
+                    </div>
+                    
+                    <!-- Descricpion del motivo -->
+                    <div class="col-md-6 campo">
+                      <label for="motivo_Descripcion">Motivo:</label> <br>
+                      <textarea rows="3"   placeholder="Ej:2692926"  id="motivo_Descripcion" class="input" name="motivo"> </textarea>
+                    </div>
+
+                  
+                  
+                  <!-- Botones -->
+                    <div class="text-center">
+                        <button type="button" class="form-button-sec btn-prev">Anterior</button>
+                        <button type="submit" class="form-button btn-next">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Paso Final -->
+        <div class="card form-step">
+            <div class="card-body">
+              <div class="final">
+              <img src="assets/img/finalizar.svg" alt="finalizar" class="Wcompletado">
+                <div>
+              <h5 class="card-title">Completado!!</h5>
+                <div>Ha completado todos los pasos correctamente.</div>
+              </div>
+              
+            </div>
+        </div>
+    </form>
     </section>
 
   </main><!-- End #main -->

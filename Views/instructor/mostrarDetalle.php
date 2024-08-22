@@ -1,6 +1,6 @@
 <?php
 // Enlazamos las dependencia
-
+session_start();
 require_once("../../Models/conexionDB.php");
 require_once("../../Controllers/instructor/seguridadAccesoInstructor.php");
 require_once("../../Controllers/instructor/mostrar_info.php");
@@ -100,10 +100,14 @@ require_once("../../Models/consultasInstructor.php");
           <i class="fa-solid fa-route"></i><span>Registro de Casos </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="ruta-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          
+          <li>
+            <a href="registrarAprendiz.php">
+              <i class="fa-solid fa-circle"></i><span>Registrar Nuevo Caso</span>
+            </a>
+          </li>
           <li>
             <a href="consultarAprendiz.php">
-            <i class="fa-solid fa-circle"></i><span>Consultar Registros Hechos</span>
+              <i class="fa-solid fa-circle"></i><span>Consultar Registros Hechos</span>
             </a>
           </li>
         </ul>
