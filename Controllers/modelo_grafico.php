@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require_once __DIR__."/../Models/conexionDB.php";
 
 class ModeloGrafico {
     public function obtenerDatosGrafico($idUsuario) {

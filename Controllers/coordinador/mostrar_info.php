@@ -5,7 +5,7 @@ require_once("../../Models/consultasCoordinador.php");
 
 
 
-session_start();
+// session_start();
 function cargarCasos(){
 
     $id_usuario = $_SESSION['id'];
