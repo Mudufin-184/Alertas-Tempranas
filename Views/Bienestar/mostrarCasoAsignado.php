@@ -286,7 +286,7 @@ require_once("../../Models/consultasBienestar.php");
               },
               {
                   extend: 'excel',
-                  text: 'Exportar a Excel', // Texto en español
+                  text: 'Excel', // Texto en español
                   exportOptions: {
                       columns: [1, 2, 3, 4, 5, 6, 7]
                   }
