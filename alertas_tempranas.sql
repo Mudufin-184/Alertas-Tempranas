@@ -228,9 +228,9 @@ INSERT INTO `usuarios` (`id`, `tipo_documento`, `documento`, `nombre`, `email`, 
 (9, 'CC', 0, 'David Diaz', 'david.diaz@sena.edu.co', 2147483647, 'clave_segura_9', 'bienestar'),
 (10, 'CC', 1096547908, 'Carolina Torres', 'carolina.torres@sena.edu.co', 2147483647, '698d51a19d8a121ce581499d7b701668', 'bienestar'),
 (11, 'CC', 1014193937, 'Andrea Flores', 'velandiafonseca@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'instructor'),
-(12, 'CC', 1056504370, 'Dana', 'dsofia0528@gmail.com', 2147483647, '81dc9bdb52d04dc20036dbd8313ed055', 'bienestar'),
-(14, 'CC', 1014193937, 'Karen', 'karencamacho484@gmail.com', 2147483647, '827ccb0eea8a706c4c34a16891f84e7b', 'coordinadorAcademico'),
-(15, 'CC', 1098374657, 'jhojana', 'jhojana@gmail.com', 2147483647, '3b712de48137572f3849aabd5666a4e3', 'coordinadorFormacion'),
+(12, 'CC', 1056504370, 'Dana', 'dsofia0528@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'bienestar'),
+(14, 'CC', 1014193937, 'Karen', 'karencamacho484@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'coordinadorAcademico'),
+(15, 'CC', 1098374657, 'jhojana', 'jhojana@gmail.com', 2147483647, '202cb962ac59075b964b07152d234b70', 'coordinadorFormacion'),
 (16, 'CC', 1057164018, 'Jean Carlos', 'v@v', 456987, '202cb962ac59075b964b07152d234b70', 'coordinadorAcademico');
 
 --
